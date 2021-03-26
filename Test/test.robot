@@ -2,13 +2,16 @@
 Documentation    Testing Infotiv Car Rental
 Library          SeleniumLibrary
 
+*** Variables ***
+${BROWSER} = chrome
+
 *** Test Cases ***
 Uer can access website, click around it and logg in
     [Documentation]              Testing so that the webpage opens properly, click around it and logg in
     [Tags]                       Test 1
 
     #Testar så att sidan öppnas koreckt
-    Open browser                 about:blank     chrome
+    Open browser                 about:blank     ${BROWSER}
     Go To                        http://rental9.infotiv.net/webpage/html/gui/index.php
     Wait until page contains     Infotiv Car Rental
 
