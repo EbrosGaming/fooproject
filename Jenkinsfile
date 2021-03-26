@@ -28,7 +28,7 @@ pipeline {
         }
     stage('Robot Framework System tests with Selenium') {
             steps {
-                sh 'robot --variable BROWSER:headlesschrome -d Results  Tests'
+                sh 'robot --variable BROWSER:headlesschrome -d result  Test'
             }
             post {
                 always {
@@ -36,7 +36,7 @@ pipeline {
                           step(
                                 [
                                   $class               : 'RobotPublisher',
-                                  outputPath           : 'results',
+                                  outputPath           : 'result',
                                   outputFileName       : '**/output.xml',
                                   reportFileName       : '**/report.html',
                                   logFileName          : '**/log.html',
